@@ -5,7 +5,7 @@ This is an IOS Swift demo application for displaying the movies list by using [R
 Time spent: 18 hours spent in total 
 
  * first version I did basic function within around 7 hours.  
- * second version I did with delegate, swift struct for data model, as well as adding more optional features around 10 hour. 
+ * second version I did with delegate, swift class for data model, as well as adding more optional features around 10 hour. 
 
 Completed user stories:
 ------------------------
