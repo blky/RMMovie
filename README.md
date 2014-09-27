@@ -28,5 +28,6 @@ Stories not implemented:
 * Customize the navigation bar. (optional)
 
  
+![Video Walkthrough](RMMovie.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
