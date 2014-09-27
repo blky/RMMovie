@@ -1,4 +1,4 @@
-# RottenTomatoes Box Office Demo
+# RottenTomatoes Client
 
 This is an IOS Swift demo application for displaying the movies list by using [RottenTomatoes API](http://www.rottentomatoes.com/).  
 
