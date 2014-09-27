@@ -53,12 +53,9 @@ class BoxOfficeViewController: UIViewController , UITableViewDataSource, UITable
         return cell
      }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        var tableview:UITableView =  (sender as UITableViewCell).superview?.superview as UITableView
-        
+        //var tableview:UITableView =  (sender as UITableViewCell).superview?.superview as UITableView
         if (segue.identifier == "toDetail") {
             if segue.destinationViewController.isKindOfClass(DetailViewController) {
-                
                 if self.searchDisplayController?.active == true {
                     let DVC:DetailViewController = segue.destinationViewController as DetailViewController
                     let tableIndex = self.searchDisplayController?.searchResultsTableView.indexPathForCell(sender as UITableViewCell)?.row
@@ -95,30 +92,6 @@ class BoxOfficeViewController: UIViewController , UITableViewDataSource, UITable
         }
         myTableView.reloadData()
      }
-    // mark - search
-    
-    /*
-    func filterContentForSearchText(searchText:String,scope:String) {
-        //convert to nsarray for searching
-        /*
-        movies.filter { (T) -> Bool in
-           
-        } */
-        
-        let  filterMovies = movies.filter { $0  }
-        println("=======search text is \(searchText)")
-        var resultPredicate = NSPredicate(format: "name contains[cd] %@", searchText)
-        let NS_movies:NSArray = NSArray(array: movies)
-        println("=====\(NS_movies)")
-        let NS_filteredMovied:NSArray = NS_movies.filteredArrayUsingPredicate(resultPredicate) as NSArray
-        for ea in NS_filteredMovied {
-            filterMovies.append(ea as Movie)
-        }
-        println("\n[ ]>>>>>> \(__FILE__.pathComponents.last!) >> \(__FUNCTION__) < \(__LINE__) >")
-        
-
-    } */
- 
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         // Filter the array using the filter method
         self.filterMovies = self.movies.filter({( movie: Movie) -> Bool in
@@ -127,12 +100,10 @@ class BoxOfficeViewController: UIViewController , UITableViewDataSource, UITable
             return movieMatch && (stringMatch != nil)
         })
     }
- 
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)
         return true
     }
-    
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true

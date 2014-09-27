@@ -1,7 +1,6 @@
 import Foundation
 
-class Movie  {
-    
+struct Movie  {
     let title:String
     let synopsis:String
     let thumbnail:String
@@ -11,7 +10,6 @@ class Movie  {
         self.synopsis = synopsis
         self.thumbnail = thumbnail
     }
-    
     var thumbnailURL:NSURL {
         get {
             return NSURL(string: thumbnail)
@@ -27,6 +25,4 @@ class Movie  {
             return NSURL (string: thumbnail.stringByReplacingOccurrencesOfString("_tmb", withString: "_det"))
         }
     }
-
-    
 }
